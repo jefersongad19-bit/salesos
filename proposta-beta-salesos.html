@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a14">
+<meta property="og:title" content="SalesOS Beta — Convite Exclusivo">
+<meta property="og:description" content="Você foi selecionado para testar o melhor app de gestão de vendas do Brasil antes do lançamento oficial.">
+<title>SalesOS · Convite Beta Exclusivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a14;--s1:#111120;--card:#161628;--border:#1f1f38;--b2:#2a2a48;
+  --green:#00e676;--gd:#00c160;--blue:#3d8eff;--yellow:#ffd93d;
+  --red:#ff5252;--purple:#c77dff;--orange:#ff7c43;
+  --txt:#f0f0ff;--t2:#8888aa;--t3:#44446a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:60px 20px 40px;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,230,118,.1) 0%,transparent 70%),
+             radial-gradient(ellipse 50% 40% at 80% 80%,rgba(61,142,255,.07) 0%,transparent 60%),
+             var(--bg);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(0,230,118,.015) 60px,rgba(0,230,118,.015) 61px),
+             repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(0,230,118,.015) 60px,rgba(0,230,118,.015) 61px);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);
+  border-radius:100px;padding:6px 16px;margin-bottom:28px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);
+  letter-spacing:2px;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-logo{font-size:clamp(42px,10vw,80px);font-weight:900;letter-spacing:-2px;margin-bottom:8px;line-height:1}
+.hero-logo span{color:var(--green)}
+.hero-tag{font-size:clamp(13px,3vw,18px);color:var(--t2);margin-bottom:32px;font-weight:400}
+.hero-tag strong{color:var(--txt)}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green);color:#000;
+  font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;
+  box-shadow:0 0 40px rgba(0,230,118,.3);transition:all .2s;cursor:pointer;
+  text-decoration:none;
+}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,230,118,.4)}
+.hero-cta:active{transform:scale(.97)}
+.hero-sub{font-size:12px;color:var(--t3);margin-top:12px}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--t3);display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ── DEVICES HERO ── */
+.devices-hero{position:relative;width:100%;max-width:860px;margin:36px auto 0;padding:0 16px}
+.devices-stage{position:relative;display:flex;justify-content:center;align-items:flex-end;min-height:300px}
+
+/* Desktop monitor */
+.d-desktop{position:relative;width:60%;z-index:3;flex-shrink:0}
+.d-monitor{background:#12121f;border-radius:10px;border:2px solid #2a2a48;overflow:hidden;box-shadow:0 16px 60px rgba(0,0,0,.7)}
+.d-topbar{height:22px;background:#0a0a14;display:flex;align-items:center;padding:0 9px;gap:5px;border-bottom:1px solid #1a1a2e}
+.d-dot{width:7px;height:7px;border-radius:50%}
+.d-screen{aspect-ratio:16/9;overflow:hidden}
+.d-stand{height:14px;background:linear-gradient(180deg,#1a1a2e,#111128);width:28%;margin:0 auto;border-radius:0 0 4px 4px;border:2px solid #2a2a48;border-top:none}
+.d-base{height:7px;background:#0a0a14;width:42%;margin:0 auto;border-radius:3px;border:1.5px solid #2a2a48}
+
+/* Notebook */
+.d-notebook{position:absolute;left:-6%;bottom:0;width:36%;z-index:2;transform:rotate(-2deg)}
+.nb-lid{background:#12121f;border-radius:7px 7px 0 0;border:2px solid #2a2a48;border-bottom:none;aspect-ratio:16/10;overflow:hidden;padding:4px 4px 0}
+.nb-bar{height:12px;background:#0a0a14;border-radius:3px 3px 0 0;display:flex;align-items:center;padding:0 6px;gap:3px;margin-bottom:2px}
+.nb-dot{width:4px;height:4px;border-radius:50%}
+.nb-content{height:calc(100% - 18px);overflow:hidden}
+.nb-body{height:8px;background:linear-gradient(180deg,#1a1a2e,#111128);border-radius:0 0 4px 4px;border:2px solid #2a2a48;border-top:none}
+.nb-base{height:5px;background:#0a0a14;width:112%;margin-left:-6%;border-radius:0 0 6px 6px;border:1.5px solid #2a2a48;border-top:none}
+
+/* Tablet */
+.d-tablet{position:absolute;right:-4%;bottom:8px;width:20%;z-index:4;transform:rotate(2deg)}
+.tb-body{background:#12121f;border-radius:12px;border:2.5px solid #2a2a48;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.6);aspect-ratio:3/4}
+.tb-bar{height:12px;background:#0a0a14;display:flex;align-items:center;justify-content:center}
+.tb-cam{width:4px;height:4px;background:#1a1a28;border-radius:50%}
+.tb-screen{height:calc(100% - 12px);overflow:hidden}
+
+/* Phone */
+.d-phone{position:absolute;right:-16%;bottom:0;width:13%;z-index:5}
+.ph-body{background:#12121f;border-radius:22px;border:2.5px solid #2a2a48;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.7);aspect-ratio:9/20}
+.ph-notch{height:14px;background:#0a0a14;display:flex;align-items:center;justify-content:center}
+.ph-pill{width:36px;height:3px;background:#1a1a28;border-radius:2px}
+.ph-screen{height:calc(100% - 14px);overflow:hidden}
+
+/* floating cards */
+.float-card{
+  position:absolute;background:var(--card);border:1px solid;border-radius:10px;
+  padding:10px 12px;font-size:11px;box-shadow:0 8px 24px rgba(0,0,0,.5);
+  min-width:110px;animation:float 3s ease-in-out infinite;display:none;
+}
+@media(min-width:520px){
+  .float-card{display:block}
+  .float-card.left{left:2%;top:18%;animation-delay:.5s}
+  .float-card.right{right:18%;top:8%;animation-delay:1.2s}
+}
+.device-chips{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.dchip{font-size:10px;color:var(--t2);display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:20px;padding:4px 10px}
+
+/* Keep old phone classes for screens section */
+.p-header{background:rgba(10,10,20,.95);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.p-logo{font-size:14px;font-weight:800;display:flex;align-items:center;gap:5px}
+.p-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.p-date{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--t3);background:var(--card);border:1px solid var(--border);padding:2px 7px;border-radius:5px}
+
+@media(max-width:500px){
+  .d-notebook,.d-tablet,.d-phone{display:none}
+  .d-desktop{width:100%}
+  .devices-stage{min-height:auto}
+}
+
+/* ── SECTIONS ── */
+.section{padding:60px 20px}
+.container{max-width:600px;margin:0 auto}
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sec-tag::before{content:'▸';font-size:8px}
+h2{font-size:clamp(24px,6vw,38px);font-weight:900;letter-spacing:-.5px;line-height:1.1;margin-bottom:16px}
+h2 em{color:var(--green);font-style:normal}
+
+/* ── FEATURES ── */
+.features{padding:60px 20px;background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.feat-grid{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.feat{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:18px;display:flex;gap:14px;align-items:flex-start;
+  transition:border-color .2s,transform .2s;
+}
+.feat:hover{border-color:var(--green);transform:translateX(4px)}
+.feat-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.feat-title{font-size:14px;font-weight:800;margin-bottom:4px}
+.feat-desc{font-size:12px;color:var(--t2);line-height:1.5}
+.feat-badge{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  padding:2px 8px;border-radius:100px;margin-top:6px;display:inline-block;font-weight:700;
+}
+
+/* ── SCREEN PREVIEWS ── */
+.previews{padding:60px 20px}
+.preview-tabs{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;padding-bottom:4px}
+.ptab{
+  padding:7px 14px;border-radius:8px;border:1.5px solid var(--border);
+  background:transparent;color:var(--t2);font-size:12px;font-weight:600;
+  cursor:pointer;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;
+  transition:all .2s;
+}
+.ptab.active{background:var(--green);color:#000;border-color:var(--green)}
+.preview-screen{display:none}
+.preview-screen.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.screen-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,.4);
+}
+.screen-bar{
+  background:var(--s1);padding:10px 14px;
+  display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);
+}
+.sbar-dot{width:8px;height:8px;border-radius:50%}
+.screen-body{padding:14px}
+
+/* ── PREÇO ── */
+.preco-section{padding:60px 20px;background:var(--s1);border-top:1px solid var(--border)}
+.preco-card{
+  background:var(--card);border:1px solid rgba(0,230,118,.4);border-radius:20px;
+  padding:28px 24px;max-width:420px;margin:28px auto 0;
+  box-shadow:0 0 60px rgba(0,230,118,.1),0 20px 60px rgba(0,0,0,.4);
+  position:relative;overflow:hidden;text-align:center;
+}
+.preco-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+}
+.beta-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);
+  border-radius:100px;padding:5px 14px;margin-bottom:18px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--green);letter-spacing:2px;
+}
+.preco-de{font-size:13px;color:var(--t3);text-decoration:line-through;margin-bottom:4px}
+.preco-por{font-size:64px;font-weight:900;color:var(--green);line-height:1;margin-bottom:4px;letter-spacing:-2px}
+.preco-por sup{font-size:24px;vertical-align:top;margin-top:12px}
+.preco-label{font-size:12px;color:var(--t2);margin-bottom:22px}
+.preco-includes{text-align:left;margin-bottom:24px;display:flex;flex-direction:column;gap:10px}
+.preco-inc{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--t2);line-height:1.4}
+.preco-inc-check{
+  min-width:20px;height:20px;border-radius:6px;
+  background:rgba(0,230,118,.15);color:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;
+}
+.preco-inc strong{color:var(--txt);margin-right:2px}
+.btn-comprar{
+  display:block;width:100%;background:var(--green);color:#000;
+  font-weight:800;font-size:16px;padding:16px;border-radius:12px;
+  text-decoration:none;cursor:pointer;border:none;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  box-shadow:0 0 30px rgba(0,230,118,.3);transition:all .2s;
+}
+.btn-comprar:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,230,118,.4)}
+.preco-garantia{font-size:11px;color:var(--t3);margin-top:12px}
+.vagas{
+  background:rgba(255,82,82,.08);border:1px solid rgba(255,82,82,.2);
+  border-radius:8px;padding:10px 14px;margin-bottom:18px;
+  font-size:12px;color:var(--t2);
+}
+.vagas strong{color:var(--red)}
+
+/* ── TESTEMUNHO ── */
+.social-proof{padding:60px 20px}
+.proof-grid{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.proof-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;
+  position:relative;
+}
+.proof-stars{color:var(--yellow);font-size:13px;margin-bottom:8px}
+.proof-text{font-size:13px;color:var(--t2);line-height:1.65;margin-bottom:14px;font-style:italic}
+.proof-text strong{color:var(--txt);font-style:normal}
+.proof-author{display:flex;align-items:center;gap:10px}
+.proof-avatar{
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;color:#000;flex-shrink:0;
+}
+.proof-name{font-size:12px;font-weight:700}
+.proof-role{font-size:10px;color:var(--t3)}
+
+/* ── URGENCIA ── */
+.urgencia{padding:60px 20px;text-align:center;background:var(--s1);border-top:1px solid var(--border)}
+.countdown{display:flex;gap:10px;align-items:center;justify-content:center;margin:20px 0}
+.cd-unit{text-align:center}
+.cd-val{
+  font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;
+  color:var(--red);background:var(--card);border:1px solid rgba(255,82,82,.3);
+  border-radius:8px;padding:6px 12px;display:block;min-width:56px;
+}
+.cd-lbl{font-size:9px;color:var(--t3);letter-spacing:1px;margin-top:3px}
+.cd-sep{font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--red);margin-bottom:14px}
+
+/* ── FOOTER ── */
+footer{padding:30px 20px;text-align:center;border-top:1px solid var(--border);font-size:11px;color:var(--t3)}
+.footer-logo{font-size:18px;font-weight:900;margin-bottom:6px}
+.footer-logo span{color:var(--green)}
+
+/* ── STICKY CTA ── */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,20,.96);backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);
+  padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(100%);transition:transform .3s;
+}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-price{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--green)}
+.sticky-price small{font-size:10px;color:var(--t3);display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400}
+.sticky-btn{background:var(--green);color:#000;font-weight:800;font-size:14px;padding:11px 20px;border-radius:10px;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fc-label{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--t3);margin-bottom:3px}
+.fc-val{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700}
+/* responsive */
+@media(min-width:600px){
+  .float-card.left{left:-50px}
+  .float-card.right{right:-50px}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-price">
+    R$37<small>oferta beta — por tempo limitado</small>
+  </div>
+  <a href="https://pay.kiwify.com.br/GG5kTC7" class="sticky-btn">Garantir meu acesso →</a>
+</div>
+
+<!-- ══════════════════════════════
+  HERO
+══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    CONVITE EXCLUSIVO · VERSÃO BETA
+  </div>
+
+  <div class="hero-logo">Sales<span>OS</span></div>
+  <div class="hero-tag">O app que <strong>organiza suas vendas</strong> e faz você <strong>faturar mais todo dia</strong></div>
+
+  <!-- ── MULTI-DEVICE MOCKUP ── -->
+  <div class="devices-hero">
+    <div class="devices-stage">
+
+      <!-- Float cards -->
+      <div class="float-card left" style="border-color:rgba(0,230,118,.3)">
+        <div class="fc-label">💰 RECEITA HOJE</div>
+        <div class="fc-val" style="color:var(--green)">R$4.2k</div>
+      </div>
+      <div class="float-card right" style="border-color:rgba(61,142,255,.3)">
+        <div class="fc-label">🎯 META</div>
+        <div class="fc-val" style="color:var(--blue)">68%</div>
+      </div>
+
+      <!-- NOTEBOOK (left, behind) -->
+      <div class="d-notebook">
+        <div class="nb-lid">
+          <div class="nb-bar">
+            <div class="nb-dot" style="background:#ff5f57"></div>
+            <div class="nb-dot" style="background:#febc2e"></div>
+            <div class="nb-dot" style="background:#28c840"></div>
+          </div>
+          <div class="nb-content">
+            <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <rect width="320" height="190" fill="#0a0a14"/>
+              <rect width="68" height="190" fill="#111120"/>
+              <circle cx="10" cy="13" r="3" fill="#00e676"/>
+              <text x="17" y="17" fill="#f0f0ff" font-size="6" font-weight="800">SalesOS</text>
+              <rect x="4" y="24" width="60" height="13" rx="4" fill="#161628"/>
+              <text x="11" y="33" fill="#00e676" font-size="5">⊞</text>
+              <text x="19" y="33" fill="#f0f0ff" font-size="5" font-weight="600">Dashboard</text>
+              <text x="11" y="48" fill="#8888aa" font-size="5">✓ Tarefas</text>
+              <text x="11" y="60" fill="#8888aa" font-size="5">👥 Leads</text>
+              <text x="11" y="72" fill="#8888aa" font-size="5">$ Finanças</text>
+              <text x="11" y="84" fill="#8888aa" font-size="5">⚡ Guerra</text>
+              <!-- content -->
+              <text x="76" y="14" fill="#f0f0ff" font-size="8" font-weight="800">Dashboard</text>
+              <!-- meta bar -->
+              <rect x="76" y="20" width="234" height="18" rx="4" fill="#161628" stroke="rgba(0,230,118,.2)" stroke-width="1"/>
+              <text x="82" y="31" fill="#f0f0ff" font-size="6" font-weight="700">🎯 Meta: 200 vendas</text>
+              <rect x="82" y="33" width="180" height="3" rx="1.5" fill="#1f1f38"/>
+              <rect x="82" y="33" width="122" height="3" rx="1.5" fill="#00e676"/>
+              <text x="256" y="31" fill="#ffca28" font-size="6" font-weight="800" font-family="monospace">68%</text>
+              <!-- kpis -->
+              <rect x="76" y="42" width="52" height="28" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="76" y="42" width="52" height="1.5" rx="1" fill="#00e676"/>
+              <text x="102" y="54" text-anchor="middle" fill="#00e676" font-size="9" font-weight="700" font-family="monospace">R$4.2k</text>
+              <text x="102" y="64" text-anchor="middle" fill="#555577" font-size="5" letter-spacing=".3">RECEITA</text>
+              <rect x="134" y="42" width="52" height="28" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="134" y="42" width="52" height="1.5" rx="1" fill="#e040fb"/>
+              <text x="160" y="54" text-anchor="middle" fill="#e040fb" font-size="9" font-weight="700" font-family="monospace">4.2x</text>
+              <text x="160" y="64" text-anchor="middle" fill="#555577" font-size="5" letter-spacing=".3">ROAS</text>
+              <rect x="192" y="42" width="52" height="28" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="192" y="42" width="52" height="1.5" rx="1" fill="#ffca28"/>
+              <text x="218" y="54" text-anchor="middle" fill="#ffca28" font-size="9" font-weight="700" font-family="monospace">76%</text>
+              <text x="218" y="64" text-anchor="middle" fill="#555577" font-size="5" letter-spacing=".3">MARGEM</text>
+              <rect x="250" y="42" width="58" height="28" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="250" y="42" width="58" height="1.5" rx="1" fill="#2979ff"/>
+              <text x="279" y="54" text-anchor="middle" fill="#64b5f6" font-size="9" font-weight="700" font-family="monospace">6</text>
+              <text x="279" y="64" text-anchor="middle" fill="#555577" font-size="5" letter-spacing=".3">LEADS</text>
+              <!-- tasks -->
+              <rect x="76" y="76" width="230" height="14" rx="4" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="80" y="81" width="8" height="8" rx="2" fill="#00e676"/>
+              <text x="94" y="87" fill="#8888aa" font-size="6">Criar criativos Meta Ads</text>
+              <text x="290" y="87" fill="#00e676" font-size="6">✓</text>
+              <rect x="76" y="94" width="230" height="14" rx="4" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="80" y="99" width="8" height="8" rx="2" fill="none" stroke="#2a2a48" stroke-width="1.5"/>
+              <text x="94" y="105" fill="#f0f0ff" font-size="6">Recrutar 5 afiliados</text>
+              <text x="290" y="105" fill="#ffca28" font-size="6">⏳</text>
+              <rect x="76" y="112" width="230" height="14" rx="4" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="80" y="117" width="8" height="8" rx="2" fill="none" stroke="#3d8eff" stroke-width="1.5"/>
+              <text x="94" y="123" fill="#f0f0ff" font-size="6">Follow-up Pedro Lima · R$1.800</text>
+              <text x="290" y="123" fill="#64b5f6" font-size="6">🔄</text>
+            </svg>
+          </div>
+        </div>
+        <div class="nb-body"></div>
+        <div class="nb-base"></div>
+      </div>
+
+      <!-- DESKTOP MONITOR (center, front) -->
+      <div class="d-desktop">
+        <div class="d-monitor">
+          <div class="d-topbar">
+            <div class="d-dot" style="background:#ff5f57"></div>
+            <div class="d-dot" style="background:#febc2e"></div>
+            <div class="d-dot" style="background:#28c840"></div>
+            <div style="flex:1;background:#161628;border-radius:3px;height:12px;margin:0 auto;max-width:280px;display:flex;align-items:center;justify-content:center">
+              <span style="font-size:7px;color:#3a3a5a;font-family:monospace">🔒 salesosv4.com.br</span>
+            </div>
+          </div>
+          <div class="d-screen">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <rect width="800" height="450" fill="#0a0a14"/>
+              <rect width="190" height="450" fill="#111120"/>
+              <circle cx="20" cy="28" r="4.5" fill="#00e676"/>
+              <text x="29" y="33" fill="#f0f0ff" font-size="13" font-weight="800">SalesOS</text>
+              <rect x="10" y="50" width="170" height="30" rx="7" fill="#161628"/>
+              <text x="26" y="69" fill="#00e676" font-size="11">⊞</text>
+              <text x="42" y="70" fill="#f0f0ff" font-size="10" font-weight="600">Dashboard</text>
+              <text x="26" y="99" fill="#555577" font-size="11">👥</text>
+              <text x="42" y="100" fill="#8888aa" font-size="10">Leads / CRM</text>
+              <text x="26" y="129" fill="#555577" font-size="10">✓</text>
+              <text x="42" y="130" fill="#8888aa" font-size="10">Tarefas</text>
+              <text x="26" y="159" fill="#555577" font-size="11">$</text>
+              <text x="42" y="160" fill="#8888aa" font-size="10">Financeiro</text>
+              <text x="26" y="189" fill="#555577" font-size="11">⚡</text>
+              <text x="42" y="190" fill="#8888aa" font-size="10">Plano de Guerra</text>
+              <text x="26" y="219" fill="#555577" font-size="11">📊</text>
+              <text x="42" y="220" fill="#8888aa" font-size="10">Relatório</text>
+              <!-- header -->
+              <rect x="190" y="0" width="610" height="44" fill="#0d0d1a"/>
+              <rect x="190" y="43" width="610" height="1" fill="#1f1f38"/>
+              <text x="206" y="26" fill="#f0f0ff" font-size="16" font-weight="800">Dashboard</text>
+              <rect x="702" y="10" width="56" height="24" rx="7" fill="#00e676"/>
+              <text x="730" y="26" text-anchor="middle" fill="#000" font-size="10" font-weight="800">Sair ✕</text>
+              <rect x="636" y="12" width="58" height="20" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="665" y="25" text-anchor="middle" fill="#555577" font-size="7" font-family="monospace">QUI 5 JUN</text>
+              <!-- meta card -->
+              <rect x="206" y="54" width="574" height="46" rx="8" fill="#161628" stroke="rgba(0,230,118,.2)" stroke-width="1"/>
+              <rect x="206" y="54" width="574" height="2" rx="1" fill="#00e676" opacity=".4"/>
+              <text x="220" y="72" fill="#f0f0ff" font-size="10" font-weight="700">🎯 Meta: 200 vendas</text>
+              <rect x="220" y="77" width="440" height="5" rx="2.5" fill="#1f1f38"/>
+              <rect x="220" y="77" width="299" height="5" rx="2.5" fill="#00e676"/>
+              <text x="220" y="92" fill="#8888aa" font-size="8">136 realizadas · 27 dias restantes · ~3/dia</text>
+              <text x="766" y="72" text-anchor="end" fill="#ffca28" font-size="13" font-weight="800" font-family="monospace">68%</text>
+              <!-- fin kpis -->
+              <text x="206" y="116" fill="#555577" font-size="6.5" font-family="monospace" letter-spacing="2">FINANCEIRO</text>
+              <rect x="206" y="122" width="130" height="60" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="206" y="122" width="130" height="2" rx="1" fill="#00e676"/>
+              <text x="271" y="147" text-anchor="middle" fill="#00e676" font-size="18" font-weight="700" font-family="monospace">R$4.2k</text>
+              <text x="271" y="163" text-anchor="middle" fill="#8888aa" font-size="7">RECEITA TOTAL</text>
+              <text x="271" y="174" text-anchor="middle" fill="#555577" font-size="7">Tarefas + Leads</text>
+              <rect x="344" y="122" width="130" height="60" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="344" y="122" width="130" height="2" rx="1" fill="#ffca28"/>
+              <text x="409" y="147" text-anchor="middle" fill="#ffca28" font-size="18" font-weight="700" font-family="monospace">R$1.0k</text>
+              <text x="409" y="163" text-anchor="middle" fill="#8888aa" font-size="7">TRÁFEGO</text>
+              <rect x="482" y="122" width="130" height="60" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="482" y="122" width="130" height="2" rx="1" fill="#e040fb"/>
+              <text x="547" y="147" text-anchor="middle" fill="#e040fb" font-size="18" font-weight="700" font-family="monospace">4.2x</text>
+              <text x="547" y="163" text-anchor="middle" fill="#8888aa" font-size="7">ROAS</text>
+              <rect x="620" y="122" width="160" height="60" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="620" y="122" width="160" height="2" rx="1" fill="#ff6d00"/>
+              <text x="700" y="147" text-anchor="middle" fill="#ff6d00" font-size="18" font-weight="700" font-family="monospace">76%</text>
+              <text x="700" y="163" text-anchor="middle" fill="#8888aa" font-size="7">MARGEM</text>
+              <!-- pipeline kpis -->
+              <text x="206" y="198" fill="#555577" font-size="6.5" font-family="monospace" letter-spacing="2">PIPELINE</text>
+              <rect x="206" y="204" width="130" height="58" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="206" y="204" width="130" height="2" rx="1" fill="#f0f0ff" opacity=".2"/>
+              <text x="271" y="227" text-anchor="middle" fill="#f0f0ff" font-size="18" font-weight="700" font-family="monospace">6</text>
+              <text x="271" y="244" text-anchor="middle" fill="#8888aa" font-size="7">LEADS TOTAIS</text>
+              <rect x="344" y="204" width="130" height="58" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="344" y="204" width="130" height="2" rx="1" fill="#00e676"/>
+              <text x="409" y="227" text-anchor="middle" fill="#00e676" font-size="18" font-weight="700" font-family="monospace">R$8.7k</text>
+              <text x="409" y="244" text-anchor="middle" fill="#8888aa" font-size="7">GANHOS</text>
+              <rect x="482" y="204" width="130" height="58" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="482" y="204" width="130" height="2" rx="1" fill="#64b5f6"/>
+              <text x="547" y="227" text-anchor="middle" fill="#64b5f6" font-size="18" font-weight="700" font-family="monospace">3</text>
+              <text x="547" y="244" text-anchor="middle" fill="#8888aa" font-size="7">NEGOCIAÇÃO</text>
+              <rect x="620" y="204" width="160" height="58" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="620" y="204" width="160" height="2" rx="1" fill="#ffca28"/>
+              <text x="700" y="227" text-anchor="middle" fill="#ffca28" font-size="18" font-weight="700" font-family="monospace">50%</text>
+              <text x="700" y="244" text-anchor="middle" fill="#8888aa" font-size="7">CONVERSÃO</text>
+              <!-- tasks kpis -->
+              <text x="206" y="278" fill="#555577" font-size="6.5" font-family="monospace" letter-spacing="2">TAREFAS</text>
+              <rect x="206" y="284" width="128" height="52" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="270" y="306" text-anchor="middle" fill="#f0f0ff" font-size="16" font-weight="700" font-family="monospace">12</text>
+              <text x="270" y="322" text-anchor="middle" fill="#8888aa" font-size="7">TOTAL</text>
+              <rect x="342" y="284" width="128" height="52" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="406" y="306" text-anchor="middle" fill="#00e676" font-size="16" font-weight="700" font-family="monospace">8</text>
+              <text x="406" y="322" text-anchor="middle" fill="#8888aa" font-size="7">CONCLUÍDAS</text>
+              <rect x="478" y="284" width="128" height="52" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="542" y="306" text-anchor="middle" fill="#64b5f6" font-size="16" font-weight="700" font-family="monospace">3</text>
+              <text x="542" y="322" text-anchor="middle" fill="#8888aa" font-size="7">EM ANDAMENTO</text>
+              <rect x="614" y="284" width="166" height="52" rx="8" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="697" y="306" text-anchor="middle" fill="#ffca28" font-size="16" font-weight="700" font-family="monospace">67%</text>
+              <text x="697" y="322" text-anchor="middle" fill="#8888aa" font-size="7">% CONCLUSÃO</text>
+              <!-- tasks list -->
+              <text x="206" y="350" fill="#555577" font-size="6.5" font-family="monospace" letter-spacing="2">TAREFAS RECENTES</text>
+              <rect x="206" y="356" width="574" height="18" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="214" y="361" width="10" height="10" rx="3" fill="#00e676"/>
+              <text x="232" y="369" fill="#8888aa" font-size="8">Criar 3 criativos Meta Ads</text>
+              <text x="768" y="369" text-anchor="end" fill="#00e676" font-size="8" font-weight="700">✓ R$600</text>
+              <rect x="206" y="378" width="574" height="18" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="214" y="383" width="10" height="10" rx="3" fill="none" stroke="#2a2a48" stroke-width="1.5"/>
+              <text x="232" y="391" fill="#f0f0ff" font-size="8">Follow-up Pedro Lima · R$1.800</text>
+              <text x="768" y="391" text-anchor="end" fill="#64b5f6" font-size="8">🔄</text>
+              <rect x="206" y="400" width="574" height="18" rx="5" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="214" y="405" width="10" height="10" rx="3" fill="none" stroke="#2a2a48" stroke-width="1.5"/>
+              <text x="232" y="413" fill="#f0f0ff" font-size="8">Recrutar 5 afiliados</text>
+              <text x="768" y="413" text-anchor="end" fill="#ffca28" font-size="8">⏳</text>
+            </svg>
+          </div>
+        </div>
+        <div class="d-stand"></div>
+        <div class="d-base"></div>
+      </div>
+
+      <!-- TABLET (right, behind phone) -->
+      <div class="d-tablet">
+        <div class="tb-body">
+          <div class="tb-bar"><div class="tb-cam"></div></div>
+          <div class="tb-screen">
+            <svg viewBox="0 0 180 230" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <rect width="180" height="230" fill="#0a0a14"/>
+              <rect width="180" height="32" fill="rgba(10,10,20,.96)"/>
+              <circle cx="12" cy="16" r="3.5" fill="#00e676"/>
+              <text x="19" y="20" fill="#f0f0ff" font-size="9" font-weight="800">SalesOS</text>
+              <text x="10" y="44" fill="#555577" font-size="4.5" font-family="monospace" letter-spacing="1.5">FINANCEIRO</text>
+              <rect x="10" y="50" width="160" height="60" rx="8" fill="rgba(0,0,0,.2)" stroke="rgba(0,230,118,.25)" stroke-width="1"/>
+              <text x="90" y="88" text-anchor="middle" fill="#00e676" font-size="28" font-weight="700" font-family="monospace">4.2x</text>
+              <text x="90" y="103" text-anchor="middle" fill="#8888aa" font-size="5.5" letter-spacing="2">ROAS</text>
+              <text x="90" y="112" text-anchor="middle" fill="#555577" font-size="4.5">R$1k → R$4.2k</text>
+              <rect x="10" y="118" width="72" height="38" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="10" y="118" width="72" height="1.5" rx="1" fill="#00e676"/>
+              <text x="46" y="134" text-anchor="middle" fill="#00e676" font-size="11" font-weight="700" font-family="monospace">R$4.2k</text>
+              <text x="46" y="148" text-anchor="middle" fill="#8888aa" font-size="5" letter-spacing=".3">RECEITA</text>
+              <rect x="98" y="118" width="72" height="38" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="98" y="118" width="72" height="1.5" rx="1" fill="#ffca28"/>
+              <text x="134" y="134" text-anchor="middle" fill="#ffca28" font-size="11" font-weight="700" font-family="monospace">R$1.0k</text>
+              <text x="134" y="148" text-anchor="middle" fill="#8888aa" font-size="5" letter-spacing=".3">TRÁFEGO</text>
+              <rect x="10" y="162" width="72" height="38" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="10" y="162" width="72" height="1.5" rx="1" fill="#ff6d00"/>
+              <text x="46" y="178" text-anchor="middle" fill="#ff6d00" font-size="11" font-weight="700" font-family="monospace">76%</text>
+              <text x="46" y="192" text-anchor="middle" fill="#8888aa" font-size="5" letter-spacing=".3">MARGEM</text>
+              <rect x="98" y="162" width="72" height="38" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <rect x="98" y="162" width="72" height="1.5" rx="1" fill="#e040fb"/>
+              <text x="134" y="178" text-anchor="middle" fill="#e040fb" font-size="11" font-weight="700" font-family="monospace">R$3.2k</text>
+              <text x="134" y="192" text-anchor="middle" fill="#8888aa" font-size="5" letter-spacing=".3">LUCRO</text>
+              <!-- nav -->
+              <rect y="208" width="180" height="22" fill="rgba(10,10,20,.96)"/>
+              <rect y="207" width="180" height="1" fill="#1f1f38"/>
+              <text x="22" y="222" text-anchor="middle" fill="#555577" font-size="10">⊞</text>
+              <text x="58" y="222" text-anchor="middle" fill="#555577" font-size="9">👥</text>
+              <text x="90" y="222" text-anchor="middle" fill="#00e676" font-size="9">$</text>
+              <circle cx="90" cy="224" r="1.5" fill="#00e676"/>
+              <text x="122" y="222" text-anchor="middle" fill="#555577" font-size="9">⚡</text>
+              <text x="158" y="222" text-anchor="middle" fill="#555577" font-size="9">📊</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHONE (far right) -->
+      <div class="d-phone">
+        <div class="ph-body">
+          <div class="ph-notch"><div class="ph-pill"></div></div>
+          <div class="ph-screen">
+            <svg viewBox="0 0 120 260" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <rect width="120" height="260" fill="#0a0a14"/>
+              <rect width="120" height="30" fill="rgba(10,10,20,.96)"/>
+              <circle cx="10" cy="15" r="3" fill="#00e676"/>
+              <text x="16" y="19" fill="#f0f0ff" font-size="8" font-weight="800">SalesOS</text>
+              <!-- CRM leads -->
+              <text x="8" y="44" fill="#555577" font-size="4" font-family="monospace" letter-spacing="1">LEADS</text>
+              <text x="8" y="54" fill="#f0f0ff" font-size="9" font-weight="800">Pipeline</text>
+              <!-- lead items -->
+              <rect x="8" y="60" width="104" height="36" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="14" y="72" fill="#f0f0ff" font-size="7" font-weight="700">Lucas Mendes</text>
+              <text x="14" y="82" fill="#8888aa" font-size="5">WhatsApp · R$197</text>
+              <rect x="14" y="86" width="28" height="7" rx="3.5" fill="rgba(0,230,118,.12)"/>
+              <text x="28" y="92" text-anchor="middle" fill="#00e676" font-size="4.5">🏆 Ganho</text>
+              <text x="106" y="82" text-anchor="end" fill="#00e676" font-size="7" font-weight="700" font-family="monospace">R$197</text>
+              <rect x="8" y="100" width="104" height="36" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="14" y="112" fill="#f0f0ff" font-size="7" font-weight="700">Ana Paula</text>
+              <text x="14" y="122" fill="#8888aa" font-size="5">Instagram · R$97</text>
+              <rect x="14" y="126" width="36" height="7" rx="3.5" fill="rgba(41,121,255,.12)"/>
+              <text x="32" y="132" text-anchor="middle" fill="#64b5f6" font-size="4.5">💬 Negociação</text>
+              <rect x="8" y="140" width="104" height="36" rx="6" fill="#161628" stroke="#1f1f38" stroke-width="1"/>
+              <text x="14" y="152" fill="#f0f0ff" font-size="7" font-weight="700">Rafael Costa</text>
+              <text x="14" y="162" fill="#8888aa" font-size="5">Tráfego Pago · R$297</text>
+              <rect x="14" y="166" width="30" height="7" rx="3.5" fill="rgba(255,202,40,.1)"/>
+              <text x="29" y="172" text-anchor="middle" fill="#ffca28" font-size="4.5">📋 Proposta</text>
+              <!-- fab -->
+              <circle cx="98" cy="216" r="11" fill="#00e676"/>
+              <text x="98" y="221" text-anchor="middle" fill="#000" font-size="14" font-weight="800">+</text>
+              <!-- nav -->
+              <rect y="238" width="120" height="22" fill="rgba(10,10,20,.96)"/>
+              <rect y="237" width="120" height="1" fill="#1f1f38"/>
+              <text x="12" y="252" text-anchor="middle" fill="#555577" font-size="10">⊞</text>
+              <text x="36" y="252" text-anchor="middle" fill="#00e676" font-size="9">👥</text>
+              <circle cx="36" cy="255" r="1.5" fill="#00e676"/>
+              <text x="60" y="252" text-anchor="middle" fill="#555577" font-size="8">✓</text>
+              <text x="84" y="252" text-anchor="middle" fill="#555577" font-size="9">$</text>
+              <text x="108" y="252" text-anchor="middle" fill="#555577" font-size="9">⚡</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /stage -->
+
+    <!-- Device chips -->
+    <div class="device-chips">
+      <span class="dchip">🖥️ Desktop</span>
+      <span class="dchip">💻 Notebook</span>
+      <span class="dchip">📱 Tablet</span>
+      <span class="dchip">📱 iPhone / Android</span>
+    </div>
+  </div>
+
+  <a href="#preco" class="hero-cta">Quero meu acesso beta →</a>
+  <div class="hero-sub" style="font-size:12px;color:var(--t3);margin-top:12px;margin-bottom:20px">🔒 Oferta exclusiva para amigos · Preço sobe em breve</div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--t3);margin-top:8px;padding-bottom:24px;animation:bounce 2s ease-in-out infinite">
+    <span>ver funcionalidades</span>
+    <span style="font-size:16px">↓</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  FEATURES
+══════════════════════════════ -->
+<section class="features">
+  <div class="container">
+    <div class="sec-tag">O que você vai ter</div>
+    <h2>Tudo que um vendedor<br>sério <em>precisa</em></h2>
+
+    <div class="feat-grid">
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(0,230,118,.1)">📊</div>
+        <div>
+          <div class="feat-title">Dashboard em tempo real</div>
+          <div class="feat-desc">Receita, ROAS, margem, tarefas e pipeline — tudo calculado automaticamente. Abre o app e já sabe exatamente como está seu dia.</div>
+          <div class="feat-badge" style="background:rgba(0,230,118,.1);color:var(--green)">✦ Inclui leads + tarefas na receita</div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(61,142,255,.1)">✅</div>
+        <div>
+          <div class="feat-title">Tarefas Diário · Semanal · Mensal</div>
+          <div class="feat-desc">Organize suas ações com prioridade, categoria e valor. Escolha de uma lista de sugestões ou escreva do zero — com autocomplete inteligente.</div>
+          <div class="feat-badge" style="background:rgba(61,142,255,.1);color:var(--blue)">✦ 24 sugestões de vendas digitais</div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(199,125,255,.1)">👥</div>
+        <div>
+          <div class="feat-title">CRM de Leads com Pipeline Kanban</div>
+          <div class="feat-desc">Acompanhe cada lead do primeiro contato ao fechamento. Vista lista ou pipeline visual. Receita dos leads ganhos aparece automaticamente no financeiro.</div>
+          <div class="feat-badge" style="background:rgba(199,125,255,.1);color:var(--purple)">✦ Conectado ao financeiro</div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(255,217,61,.1)">💰</div>
+        <div>
+          <div class="feat-title">Financeiro — ROAS & Margem</div>
+          <div class="feat-desc">Calculado automaticamente com seus dados reais. Simulação Kiwify mostra quanto você vai receber líquido por venda. Pipeline aberto incluído.</div>
+          <div class="feat-badge" style="background:rgba(255,217,61,.1);color:var(--yellow)">✦ Simulação com seu preço e meta</div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(255,124,67,.1)">⚡</div>
+        <div>
+          <div class="feat-title">Plano de Guerra dinâmico</div>
+          <div class="feat-desc">Coloca sua meta e preço — o app recalcula as 4 fases inteiras: vendas por dia, verba de anúncios, preços de lançamento, urgência e bundle.</div>
+          <div class="feat-badge" style="background:rgba(255,124,67,.1);color:var(--orange)">✦ Muda tudo automaticamente</div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(0,230,118,.1)">📊</div>
+        <div>
+          <div class="feat-title">Relatório para compartilhar & imprimir</div>
+          <div class="feat-desc">Gera um relatório completo com KPIs, pipeline, tarefas e meta. Abre em nova aba pronto para imprimir como PDF ou enviar para cliente.</div>
+          <div class="feat-badge" style="background:rgba(0,230,118,.1);color:var(--green)">✦ Aba própria no app</div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon" style="background:rgba(61,142,255,.1)">📱</div>
+        <div>
+          <div class="feat-title">Instala como app nativo · Offline</div>
+          <div class="feat-desc">PWA — instala no Android, iPhone e PC. Funciona 100% sem internet após instalar. Seus dados ficam seguros no seu dispositivo.</div>
+          <div class="feat-badge" style="background:rgba(61,142,255,.1);color:var(--blue)">✦ Sem mensalidade · sem servidor</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  SCREENS
+══════════════════════════════ -->
+<section class="previews">
+  <div class="container">
+    <div class="sec-tag">Telas do app</div>
+    <h2>Veja como <em>funciona</em></h2>
+
+    <div class="preview-tabs">
+      <button class="ptab active" onclick="showScreen('dash',this)">📊 Dashboard</button>
+      <button class="ptab" onclick="showScreen('tarefas',this)">✅ Tarefas</button>
+      <button class="ptab" onclick="showScreen('financeiro',this)">💰 Financeiro</button>
+      <button class="ptab" onclick="showScreen('guerra',this)">⚡ Guerra</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="preview-screen active" id="screen-dash">
+      <div class="screen-card">
+        <div class="screen-bar">
+          <div class="sbar-dot" style="background:#ff5f57"></div>
+          <div class="sbar-dot" style="background:#febc2e"></div>
+          <div class="sbar-dot" style="background:#28c840"></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-left:8px">SalesOS · Dashboard</span>
+        </div>
+        <div class="screen-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--txt)"></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700">12</div>
+              <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px">Tarefas Total</div>
+            </div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)"></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--green)">8</div>
+              <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px">Concluídas</div>
+            </div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)"></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--green)">R$4.2k</div>
+              <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px">Receita Total</div>
+            </div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--purple)"></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--purple)">4.2x</div>
+              <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px">ROAS</div>
+            </div>
+          </div>
+          <!-- Meta -->
+          <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
+              <span>🎯 Meta: 200 vendas</span>
+              <span style="color:var(--yellow);font-family:'JetBrains Mono',monospace">68%</span>
+            </div>
+            <div style="height:6px;background:var(--border);border-radius:6px;overflow:hidden;margin-bottom:5px">
+              <div style="height:100%;width:68%;background:linear-gradient(90deg,var(--gd),var(--green));border-radius:6px"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--t3)">
+              <span>136 realizadas</span><span>27 dias restantes · ~3/dia</span>
+            </div>
+          </div>
+          <!-- Pipeline -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--txt)"></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700">6</div>
+              <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px">Total Leads</div>
+            </div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)"></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--green)">R$8.7k</div>
+              <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px">Receita Leads</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAREFAS -->
+    <div class="preview-screen" id="screen-tarefas">
+      <div class="screen-card">
+        <div class="screen-bar">
+          <div class="sbar-dot" style="background:#ff5f57"></div>
+          <div class="sbar-dot" style="background:#febc2e"></div>
+          <div class="sbar-dot" style="background:#28c840"></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-left:8px">SalesOS · Tarefas</span>
+        </div>
+        <div class="screen-body">
+          <!-- tabs -->
+          <div style="display:flex;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:3px;gap:3px;margin-bottom:12px">
+            <div style="flex:1;padding:6px;background:var(--green);color:#000;border-radius:6px;text-align:center;font-size:11px;font-weight:700">Diário</div>
+            <div style="flex:1;padding:6px;text-align:center;font-size:11px;color:var(--t2)">Semanal</div>
+            <div style="flex:1;padding:6px;text-align:center;font-size:11px;color:var(--t2)">Mensal</div>
+          </div>
+          <!-- task items - HTML ESTÁTICO -->
+          <div style="display:flex;align-items:center;gap:8px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:6px;opacity:.65">
+            <div style="width:18px;height:18px;border-radius:5px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#000;flex-shrink:0">✓</div>
+            <span style="flex:1;font-size:12px;font-weight:600;text-decoration:line-through;color:var(--t2)">Criar 3 criativos Meta Ads · R$600</span>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(0,230,118,.12);color:var(--green);font-family:'JetBrains Mono',monospace">Feito</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:6px;opacity:.65">
+            <div style="width:18px;height:18px;border-radius:5px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#000;flex-shrink:0">✓</div>
+            <span style="flex:1;font-size:12px;font-weight:600;text-decoration:line-through;color:var(--t2)">Live no Instagram · R$1.200</span>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(0,230,118,.12);color:var(--green);font-family:'JetBrains Mono',monospace">Feito</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:6px">
+            <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);flex-shrink:0"></div>
+            <span style="flex:1;font-size:12px;font-weight:600">Recrutar 5 afiliados</span>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(255,217,61,.12);color:var(--yellow);font-family:'JetBrains Mono',monospace">Pendente</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:6px">
+            <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--blue);flex-shrink:0"></div>
+            <span style="flex:1;font-size:12px;font-weight:600">Follow-up Pedro Lima · R$1.800</span>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(61,142,255,.12);color:var(--blue);font-family:'JetBrains Mono',monospace">Andamento</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:6px">
+            <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);flex-shrink:0"></div>
+            <span style="flex:1;font-size:12px;font-weight:600">Subir produto na Kiwify</span>
+            <span style="font-size:9px;padding:2px 7px;border-radius:100px;background:rgba(255,217,61,.12);color:var(--yellow);font-family:'JetBrains Mono',monospace">Pendente</span>
+          </div>
+          <!-- novo modal preview -->
+          <div style="background:var(--card);border:1px solid rgba(0,230,118,.3);border-radius:12px;padding:12px;margin-top:10px">
+            <div style="font-size:11px;font-weight:700;margin-bottom:8px;color:var(--green)">+ Nova Tarefa</div>
+            <div style="display:flex;gap:6px;margin-bottom:6px">
+              <div style="flex:1;background:var(--green);color:#000;border-radius:6px;padding:5px;text-align:center;font-size:10px;font-weight:700">📋 Escolher lista</div>
+              <div style="flex:1;background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:5px;text-align:center;font-size:10px;color:var(--t2)">✏️ Digitar</div>
+            </div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:8px;font-size:11px;color:var(--t3)">— Criar criativos para Meta Ads ↓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINANCEIRO -->
+    <div class="preview-screen" id="screen-financeiro">
+      <div class="screen-card">
+        <div class="screen-bar">
+          <div class="sbar-dot" style="background:#ff5f57"></div>
+          <div class="sbar-dot" style="background:#febc2e"></div>
+          <div class="sbar-dot" style="background:#28c840"></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-left:8px">SalesOS · Finanças</span>
+        </div>
+        <div class="screen-body">
+          <!-- ROAS meter -->
+          <div style="background:linear-gradient(135deg,rgba(0,230,118,.08),rgba(61,142,255,.05));border:1px solid rgba(0,230,118,.25);border-radius:12px;padding:20px;text-align:center;margin-bottom:12px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:52px;font-weight:700;color:var(--green);line-height:1">4.2x</div>
+            <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:6px">ROAS · RETORNO SOBRE TRÁFEGO</div>
+            <div style="font-size:11px;color:var(--t3);margin-top:4px">Receita R$4.200 ÷ Tráfego R$1.000</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)"></div><div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--green)">R$4.2k</div><div style="font-size:9px;color:var(--t3)">RECEITA</div></div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--yellow)"></div><div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--yellow)">R$1.0k</div><div style="font-size:9px;color:var(--t3)">TRÁFEGO</div></div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue)"></div><div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--blue)">R$3.2k</div><div style="font-size:9px;color:var(--t3)">LUCRO</div></div>
+            <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--orange)"></div><div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--orange)">76%</div><div style="font-size:9px;color:var(--t3)">MARGEM</div></div>
+          </div>
+          <!-- Leads fin -->
+          <div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px">
+            <div style="font-size:12px;font-weight:700;margin-bottom:8px">👥 Financeiro dos Leads</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
+              <div style="background:rgba(0,230,118,.06);border:1px solid rgba(0,230,118,.2);border-radius:8px;padding:8px"><div style="font-size:9px;color:var(--green);margin-bottom:2px">FECHADO</div><div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--green)">R$8.7k</div></div>
+              <div style="background:rgba(61,142,255,.06);border:1px solid rgba(61,142,255,.2);border-radius:8px;padding:8px"><div style="font-size:9px;color:var(--blue);margin-bottom:2px">PIPELINE</div><div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--blue)">R$6.5k</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUERRA -->
+    <div class="preview-screen" id="screen-guerra">
+      <div class="screen-card">
+        <div class="screen-bar">
+          <div class="sbar-dot" style="background:#ff5f57"></div>
+          <div class="sbar-dot" style="background:#febc2e"></div>
+          <div class="sbar-dot" style="background:#28c840"></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-left:8px">SalesOS · Plano de Guerra</span>
+        </div>
+        <div class="screen-body">
+          <div style="font-size:14px;font-weight:900;color:var(--green);margin-bottom:10px">⚡ Plano de Guerra</div>
+          <!-- meta edit -->
+          <div style="background:rgba(0,230,118,.06);border:1px solid rgba(0,230,118,.3);border-radius:10px;padding:12px;margin-bottom:10px">
+            <div style="font-size:11px;font-weight:700;margin-bottom:8px">🎯 Sua Meta</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px">
+              <div><div style="font-size:9px;color:var(--t3);margin-bottom:3px">VENDAS ALVO</div><div style="background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:6px;font-size:13px;font-weight:700;font-family:'JetBrains Mono',monospace">200</div></div>
+              <div><div style="font-size:9px;color:var(--t3);margin-bottom:3px">PREÇO (R$)</div><div style="background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:6px;font-size:13px;font-weight:700;font-family:'JetBrains Mono',monospace">97</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+              <div style="background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--yellow)">~7/dia</div><div style="font-size:8px;color:var(--t3)">Vendas/dia</div></div>
+              <div style="background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);border-radius:8px;padding:8px;text-align:center"><div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--green)">R$17k</div><div style="font-size:8px;color:var(--t3)">Potencial</div></div>
+            </div>
+          </div>
+          <!-- fase 1 -->
+          <div style="background:rgba(0,230,118,.04);border:1px solid rgba(0,230,118,.25);border-radius:10px;padding:12px;margin-bottom:6px">
+            <div style="font-size:9px;font-weight:700;color:var(--green);background:rgba(0,230,118,.12);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:6px">FASE 01</div>
+            <div style="font-size:12px;font-weight:700;margin-bottom:4px">Estruturação e Primeiras Vendas</div>
+            <div style="font-size:10px;color:var(--t2)">→ 3 Reels/dia · R$12/dia anúncios · 3 afiliados</div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:10px">
+              <span style="color:var(--t3)">Meta da fase</span>
+              <span style="font-family:'JetBrains Mono',monospace;color:var(--green);font-weight:700">10–15 vendas</span>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:10px;color:var(--t3);padding:4px">+ 3 fases calculadas com sua meta →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  PRECO BETA
+══════════════════════════════ -->
+<section class="preco-section" id="preco">
+  <div class="container" style="text-align:center">
+    <div class="sec-tag" style="justify-content:center">Oferta beta</div>
+    <h2>Preço especial para<br><em>quem acredita primeiro</em></h2>
+    <p style="font-size:14px;color:var(--t2);margin-bottom:8px">Você foi convidado pessoalmente antes do lançamento oficial.<br>Preço de lançamento público: <strong style="color:var(--txt)">R$97</strong></p>
+
+    <div class="preco-card">
+      <div class="beta-badge">
+        <span class="badge-dot"></span>
+        BETA · CONVITE EXCLUSIVO
+      </div>
+
+      <div class="vagas">Somente <strong>5 vagas</strong> nesse preço beta — para amigos próximos</div>
+
+      <div class="preco-de">De R$97 no lançamento oficial</div>
+      <div class="preco-por"><sup>R$</sup>37</div>
+      <div class="preco-label">acesso completo · pagamento único · sem mensalidade</div>
+
+      <div class="preco-includes">
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>App PWA</strong> — instala no celular e PC como app nativo</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>Dashboard</strong> com ROAS, receita e meta em tempo real</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>Tarefas</strong> Diário + Semanal + Mensal com sugestões</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>CRM de Leads</strong> + pipeline Kanban visual</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>Plano de Guerra</strong> que se adapta à sua meta</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>Relatório</strong> para imprimir ou enviar como PDF</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>Funciona offline</strong> — dados só no seu dispositivo</span></div>
+        <div class="preco-inc"><div class="preco-inc-check">✓</div><span><strong>Acesso beta antecipado</strong> + feedback direto comigo</span></div>
+      </div>
+
+      <a href="https://pay.kiwify.com.br/GG5kTC7" class="btn-comprar">🚀 Garantir acesso por R$37</a>
+      <div class="preco-garantia">🔒 Pagamento seguro · Link de acesso imediato · Entrega pelo link</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  URGÊNCIA + COUNTDOWN
+══════════════════════════════ -->
+<section class="urgencia">
+  <div class="container">
+    <div class="sec-tag" style="justify-content:center">Atenção</div>
+    <h2>Preço sobe em<br><em style="color:var(--red)">breve</em></h2>
+    <p style="font-size:14px;color:var(--t2);margin-bottom:8px">Após esse período o preço vai para R$97.<br>Esse convite é por tempo limitado.</p>
+
+    <div class="countdown">
+      <div class="cd-unit"><span class="cd-val" id="cdH">23</span><div class="cd-lbl">horas</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-val" id="cdM">59</span><div class="cd-lbl">minutos</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-val" id="cdS">59</span><div class="cd-lbl">segundos</div></div>
+    </div>
+
+    <a href="https://pay.kiwify.com.br/GG5kTC7" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#000;font-weight:800;font-size:16px;padding:15px 28px;border-radius:12px;text-decoration:none;box-shadow:0 0 30px rgba(0,230,118,.3);transition:all .2s;margin-top:4px">
+      Quero meu acesso agora →
+    </a>
+    <div style="font-size:11px;color:var(--t3);margin-top:10px">Acesso direto ao link do app após o pagamento</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  FOOTER
+══════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Sales<span>OS</span></div>
+  <div>App de gestão de vendas digitais · v4.0 · Funciona offline</div>
+  <div style="margin-top:8px">Desenvolvido com 🖤 · Compartilhe com quem precisa</div>
+</footer>
+
+<script>
+// Screen tabs
+function showScreen(id, btn) {
+  document.querySelectorAll('.preview-screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Countdown
+function startCountdown() {
+  const key='sos_beta_end';
+  let end=localStorage.getItem(key);
+  if(!end||Date.now()>end){
+    end=Date.now()+48*60*60*1000;
+    localStorage.setItem(key,end);
+  }
+  function tick(){
+    const diff=Math.max(0,end-Date.now());
+    const h=Math.floor(diff/3600000);
+    const m=Math.floor((diff%3600000)/60000);
+    const s=Math.floor((diff%60000)/1000);
+    document.getElementById('cdH').textContent=String(h).padStart(2,'0');
+    document.getElementById('cdM').textContent=String(m).padStart(2,'0');
+    document.getElementById('cdS').textContent=String(s).padStart(2,'0');
+  }
+  tick();setInterval(tick,1000);
+}
+startCountdown();
+
+// Sticky CTA
+window.addEventListener('scroll',()=>{
+  const sc=document.getElementById('stickyCta');
+  sc.classList.toggle('show',window.scrollY>600);
+});
+</script>
+</body>
+</html>
